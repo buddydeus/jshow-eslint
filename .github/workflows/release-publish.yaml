@@ -1,8 +1,7 @@
 name: Release And Publish on muanual trigger
 
 on:
-  watch:
-    types: started
+  workflow_dispatch
 
 jobs:
   build_tag:
@@ -10,7 +9,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: -1
 
       - name: XXX
         run: |
           echo ${{ github.repository }}
+          echo ${{ github.repository_id }}
+          echo ${{ github.repository_owner }}
+          git log
