@@ -25,7 +25,7 @@ import { buildCompat } from './utils';
  */
 const legacyConfigs: Linter.Config[] = buildCompat(...typescriptConfigs, {
   languageOptions: {
-    globals: globals.node
+    globals: { ...globals.node, ...globals.nodeBuiltin }
   },
   rules: {
     //#region eslint
@@ -41,9 +41,23 @@ const legacyConfigs: Linter.Config[] = buildCompat(...typescriptConfigs, {
 
     //#region @typescript-eslint
 
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off',
 
     //#endregion
+
+    'jshow/sort-import': [
+      'error',
+      {
+        groups: [
+          ['^node:'],
+          ['^@jshow/'],
+          ['^\\u0000', '^@?[a-zA-Z]'],
+          ['^@/'],
+          ['^\\.\\./'],
+          ['^\\./']
+        ]
+      }
+    ]
   }
 });
 

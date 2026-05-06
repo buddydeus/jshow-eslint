@@ -25,21 +25,14 @@
     "test": "vitest"
   },
   "peerDependencies": {
-    "eslint": "^9",
-    "typescript-eslint": "^8"
+    "eslint": "catalog:",
+    "typescript-eslint": "catalog:"
   },
   "dependencies": {
-    "eslint": "^9",
+    "eslint": "catalog:",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "@typescript-eslint/types": "^8",
     "@typescript-eslint/utils": "^8"
-  },
-  "devDependencies": {
-    "@types/common-tags": "^1.8.2",
-    "@types/node": "*",
-    "@vitest/coverage-v8": "4.0.14",
-    "common-tags": "^1.8.2",
-    "lodash-es": "^4.17.21"
   }
 }

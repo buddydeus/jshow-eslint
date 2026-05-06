@@ -1,4 +1,5 @@
 import { type Linter } from 'eslint';
+import globals from 'globals';
 
 import browser from './browser';
 import node from './node';
@@ -32,13 +33,15 @@ type ConfigKey = 'typescript' | 'browser' | 'node' | 'react' | 'vue';
  */
 const config: Record<ConfigKey, Linter.Config[]> & {
   prettier: typeof prettier;
+  globals: typeof globals;
 } = {
   typescript,
   browser,
   node,
   react,
   vue,
-  prettier
+  prettier,
+  globals
 };
 
 export default config;

@@ -57,9 +57,9 @@ const legacyConfigs: Linter.Config[] = buildCompat(
         'error',
         {
           groups: [
-            ['^node:'],
-            ['\\u0000'],
-            ['^react', '^@?[a-zA-Z]'],
+            ['^react', '^styled-components'],
+            ['^@jshow/'],
+            ['^\\u0000', '^@?[a-zA-Z]'],
             ['^@/'],
             ['^\\.\\./'],
             ['^\\./']
